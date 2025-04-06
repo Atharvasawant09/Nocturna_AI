@@ -1,0 +1,26 @@
+{
+    "positive_themes": {
+        "theme_falling": 0.19594594594594594,
+        "theme_flying": 0.060810810810810814,
+        "theme_chase": 0.11486486486486487,
+        "theme_death": 0.1891891891891892,
+        "theme_water": 0.060810810810810814,
+        "theme_family": 0.23648648648648649,
+        "theme_school": 0.14189189189189189,
+        "theme_teeth": 0.02702702702702703,
+        "theme_naked": 0.0472972972972973,
+        "theme_test": 0.006756756756756757
+    },
+    "negative_themes": {
+        "theme_falling": 0.09281437125748503,
+        "theme_flying": 0.041916167664670656,
+        "theme_chase": 0.020958083832335328,
+        "theme_death": 0.11976047904191617,
+        "theme_water": 0.041916167664670656,
+        "theme_family": 0.19760479041916168,
+        "theme_school": 0.11077844311377245,
+        "theme_teeth": 0.017964071856287425,
+        "theme_naked": 0.023952095808383235,
+        "theme_test": 0.011976047904191617
+    }
+}

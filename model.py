@@ -19,13 +19,18 @@ class LSTMModel(nn.Module):
         self.lstm = nn.LSTM(embedding_dim, hidden_dim, num_layers=n_layers, batch_first=True, bidirectional=True, dropout=dropout)
         self.dropout = nn.Dropout(dropout)
         self.fc = nn.Linear(hidden_dim * 2, output_dim)  # *2 for bidirectional
-        self.sigmoid = nn.Sigmoid()
-
+        
     def forward(self, text):
         embedded = self.dropout(self.embedding(text))
         packed_output, (hidden, cell) = self.lstm(embedded)
+        
+        # Concatenate the final hidden states from both directions
         hidden = torch.cat((hidden[-2,:,:], hidden[-1,:,:]), dim=1)
-        return self.sigmoid(self.fc(hidden))
+        
+        # Output shape will be [batch_size, output_dim]
+        output = self.fc(hidden)
+        
+        return output
 
 def build_lstm_model(vocab_size, max_length):
     """Build and return LSTM model configuration"""
@@ -37,17 +42,25 @@ def build_transformer_model():
 
 def train_pytorch_model(model, X_train, y_train, epochs=10, batch_size=32, device='cuda' if torch.cuda.is_available() else 'cpu'):
     """Train a PyTorch model"""
-    criterion = nn.BCELoss()
+    criterion = nn.BCEWithLogitsLoss()  # Changed to BCEWithLogitsLoss to handle logits directly
     optimizer = optim.Adam(model.parameters(), lr=0.001)
 
+    # Move data to device
     if isinstance(X_train, dict):
         X_train = {k: v.to(device) for k, v in X_train.items()}
     else:
         X_train = X_train.to(device)
-    y_train = torch.tensor(y_train, dtype=torch.float).to(device)
+    
+    # Convert y_train to 2D tensor with shape [batch_size, 1]
+    y_train = torch.tensor(y_train, dtype=torch.float).view(-1, 1).to(device)
 
-    dataset = torch.utils.data.TensorDataset(X_train['input_ids'] if isinstance(X_train, dict) else X_train, y_train)
-    dataloader = torch.utils.data.DataLoader(dataset, batch_size=batch_size, shuffle=True)
+    # Create dataset and dataloader
+    if isinstance(X_train, dict):
+        dataset = torch.utils.data.TensorDataset(X_train['input_ids'], X_train['attention_mask'], y_train)
+        dataloader = torch.utils.data.DataLoader(dataset, batch_size=batch_size, shuffle=True)
+    else:
+        dataset = torch.utils.data.TensorDataset(X_train, y_train)
+        dataloader = torch.utils.data.DataLoader(dataset, batch_size=batch_size, shuffle=True)
 
     history = {'loss': [], 'accuracy': []}
 
@@ -59,20 +72,30 @@ def train_pytorch_model(model, X_train, y_train, epochs=10, batch_size=32, devic
         correct = 0
         total = 0
 
-        for batch_X, batch_y in dataloader:
+        for batch_data in dataloader:
             optimizer.zero_grad()
+            
             if isinstance(X_train, dict):
-                outputs = model(input_ids=batch_X, attention_mask=X_train['attention_mask'][:batch_X.size(0)])
-                loss = criterion(torch.sigmoid(outputs.logits).squeeze(), batch_y)
+                # For transformer models with attention mask
+                batch_X, batch_attention, batch_y = batch_data
+                outputs = model(input_ids=batch_X, attention_mask=batch_attention)
+                # Get logits from transformer output
+                pred_logits = outputs.logits.view(-1, 1)
+                loss = criterion(pred_logits, batch_y)
+                # For accuracy calculation (apply sigmoid since we're using BCEWithLogitsLoss)
+                predicted = (torch.sigmoid(pred_logits) > 0.5).float()
             else:
+                # For LSTM model
+                batch_X, batch_y = batch_data
                 outputs = model(batch_X)
-                loss = criterion(outputs.squeeze(), batch_y)
+                loss = criterion(outputs, batch_y)
+                # For accuracy calculation
+                predicted = (torch.sigmoid(outputs) > 0.5).float()
             
             loss.backward()
             optimizer.step()
 
             epoch_loss += loss.item()
-            predicted = (torch.sigmoid(outputs.logits).squeeze() if isinstance(X_train, dict) else outputs.squeeze() > 0.5).float()
             total += batch_y.size(0)
             correct += (predicted == batch_y).sum().item()
 

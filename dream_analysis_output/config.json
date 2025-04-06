@@ -1,0 +1,9 @@
+{
+    "data_path": "dream_dataset.csv",
+    "text_column": "Text",
+    "output_dir": "dream_analysis_output",
+    "model_type": "lstm",
+    "random_seed": 42,
+    "test_size": 0.2,
+    "save_models": true
+}
