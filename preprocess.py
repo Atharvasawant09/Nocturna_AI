@@ -10,7 +10,6 @@ from torch.utils.data import TensorDataset, DataLoader
 from nltk.sentiment import SentimentIntensityAnalyzer
 from torchtext.data.utils import get_tokenizer
 from torchtext.vocab import build_vocab_from_iterator
-
 # Ensure punkt is downloaded
 try:
     nltk.data.find('tokenizers/punkt')
@@ -18,9 +17,10 @@ except LookupError:
     nltk.download('punkt')
 
 # Download other necessary NLTK data
+nltk.download('punkt_tab', quiet=True)
 nltk.download('vader_lexicon', quiet=True)
 nltk.download('stopwords', quiet=True)
-nltk.download('averaged_perceptron_tagger', quiet=True)
+nltk.download('averaged_perceptron_tagger_eng', quiet=True)
 nltk.download('wordnet', quiet=True)
 
 def load_data(data_path):

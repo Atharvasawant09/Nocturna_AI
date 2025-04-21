@@ -1,0 +1,556 @@
+2025-04-10 19:15:39,052 - __main__ - INFO - Starting Dream Analysis System with config: {'data_path': 'dream_dataset.csv', 'text_column': 'Text', 'output_dir': 'dream_analysis_output', 'model_type': 'lstm', 'random_seed': 42, 'test_size': 0.2, 'save_models': True}
+2025-04-10 19:15:51,917 - dream_analysis_system - INFO - Loading data from dream_dataset.csv
+2025-04-10 19:15:51,929 - dream_analysis_system - INFO - Loaded 500 dream records
+2025-04-10 19:15:51,940 - dream_analysis_system - ERROR - Error during data loading and preprocessing: 
+**********************************************************************
+  Resource [93mpunkt_tab[0m not found.
+  Please use the NLTK Downloader to obtain the resource:
+
+  [31m>>> import nltk
+  >>> nltk.download('punkt_tab')
+  [0m
+  For more information see: https://www.nltk.org/data.html
+
+  Attempted to load [93mtokenizers/punkt_tab/english/[0m
+
+  Searched in:
+    - 'C:\\Users\\Utsav Sangani/nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\share\\nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\lib\\nltk_data'
+    - 'C:\\Users\\Utsav Sangani\\AppData\\Roaming\\nltk_data'
+    - 'C:\\nltk_data'
+    - 'D:\\nltk_data'
+    - 'E:\\nltk_data'
+**********************************************************************
+
+2025-04-10 19:15:51,946 - __main__ - ERROR - Error running Dream Analysis System: 
+**********************************************************************
+  Resource [93mpunkt_tab[0m not found.
+  Please use the NLTK Downloader to obtain the resource:
+
+  [31m>>> import nltk
+  >>> nltk.download('punkt_tab')
+  [0m
+  For more information see: https://www.nltk.org/data.html
+
+  Attempted to load [93mtokenizers/punkt_tab/english/[0m
+
+  Searched in:
+    - 'C:\\Users\\Utsav Sangani/nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\share\\nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\lib\\nltk_data'
+    - 'C:\\Users\\Utsav Sangani\\AppData\\Roaming\\nltk_data'
+    - 'C:\\nltk_data'
+    - 'D:\\nltk_data'
+    - 'E:\\nltk_data'
+**********************************************************************
+Traceback (most recent call last):
+  File "D:\Projects\Projects\Nocturna_AI\main.py", line 63, in main
+    system.load_and_preprocess_data()
+  File "D:\Projects\Projects\Nocturna_AI\dream_analysis_system.py", line 53, in load_and_preprocess_data
+    self.processed_data = clean_and_process_data(
+  File "D:\Projects\Projects\Nocturna_AI\preprocess.py", line 83, in clean_and_process_data
+    processed_df['features'] = processed_df['clean_text'].apply(extract_dream_features_nltk)
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\pandas\core\series.py", line 4924, in apply
+    ).apply()
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\pandas\core\apply.py", line 1427, in apply
+    return self.apply_standard()
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\pandas\core\apply.py", line 1507, in apply_standard
+    mapped = obj._map_values(
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\pandas\core\base.py", line 921, in _map_values
+    return algorithms.map_array(arr, mapper, na_action=na_action, convert=convert)
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\pandas\core\algorithms.py", line 1743, in map_array
+    return lib.map_infer(values, mapper, convert=convert)
+  File "lib.pyx", line 2972, in pandas._libs.lib.map_infer
+  File "D:\Projects\Projects\Nocturna_AI\preprocess.py", line 43, in extract_dream_features_nltk
+    tokens = nltk.word_tokenize(text)
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\nltk\tokenize\__init__.py", line 142, in word_tokenize
+    sentences = [text] if preserve_line else sent_tokenize(text, language)
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\nltk\tokenize\__init__.py", line 119, in sent_tokenize
+    tokenizer = _get_punkt_tokenizer(language)
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\nltk\tokenize\__init__.py", line 105, in _get_punkt_tokenizer
+    return PunktTokenizer(language)
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\nltk\tokenize\punkt.py", line 1744, in __init__
+    self.load_lang(lang)
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\nltk\tokenize\punkt.py", line 1749, in load_lang
+    lang_dir = find(f"tokenizers/punkt_tab/{lang}/")
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\nltk\data.py", line 579, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource [93mpunkt_tab[0m not found.
+  Please use the NLTK Downloader to obtain the resource:
+
+  [31m>>> import nltk
+  >>> nltk.download('punkt_tab')
+  [0m
+  For more information see: https://www.nltk.org/data.html
+
+  Attempted to load [93mtokenizers/punkt_tab/english/[0m
+
+  Searched in:
+    - 'C:\\Users\\Utsav Sangani/nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\share\\nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\lib\\nltk_data'
+    - 'C:\\Users\\Utsav Sangani\\AppData\\Roaming\\nltk_data'
+    - 'C:\\nltk_data'
+    - 'D:\\nltk_data'
+    - 'E:\\nltk_data'
+**********************************************************************
+
+2025-04-10 19:19:31,033 - __main__ - INFO - Starting Dream Analysis System with config: {'data_path': 'dream_dataset.csv', 'text_column': 'Text', 'output_dir': 'dream_analysis_output', 'model_type': 'lstm', 'random_seed': 42, 'test_size': 0.2, 'save_models': True}
+2025-04-10 19:19:32,084 - dream_analysis_system - INFO - Loading data from dream_dataset.csv
+2025-04-10 19:19:32,093 - dream_analysis_system - INFO - Loaded 500 dream records
+2025-04-10 19:19:32,103 - dream_analysis_system - ERROR - Error during data loading and preprocessing: 
+**********************************************************************
+  Resource [93mpunkt_tab[0m not found.
+  Please use the NLTK Downloader to obtain the resource:
+
+  [31m>>> import nltk
+  >>> nltk.download('punkt_tab')
+  [0m
+  For more information see: https://www.nltk.org/data.html
+
+  Attempted to load [93mtokenizers/punkt_tab/english/[0m
+
+  Searched in:
+    - 'C:\\Users\\Utsav Sangani/nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\share\\nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\lib\\nltk_data'
+    - 'C:\\Users\\Utsav Sangani\\AppData\\Roaming\\nltk_data'
+    - 'C:\\nltk_data'
+    - 'D:\\nltk_data'
+    - 'E:\\nltk_data'
+**********************************************************************
+
+2025-04-10 19:19:32,104 - __main__ - ERROR - Error running Dream Analysis System: 
+**********************************************************************
+  Resource [93mpunkt_tab[0m not found.
+  Please use the NLTK Downloader to obtain the resource:
+
+  [31m>>> import nltk
+  >>> nltk.download('punkt_tab')
+  [0m
+  For more information see: https://www.nltk.org/data.html
+
+  Attempted to load [93mtokenizers/punkt_tab/english/[0m
+
+  Searched in:
+    - 'C:\\Users\\Utsav Sangani/nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\share\\nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\lib\\nltk_data'
+    - 'C:\\Users\\Utsav Sangani\\AppData\\Roaming\\nltk_data'
+    - 'C:\\nltk_data'
+    - 'D:\\nltk_data'
+    - 'E:\\nltk_data'
+**********************************************************************
+Traceback (most recent call last):
+  File "D:\Projects\Projects\Nocturna_AI\main.py", line 63, in main
+    system.load_and_preprocess_data()
+  File "D:\Projects\Projects\Nocturna_AI\dream_analysis_system.py", line 53, in load_and_preprocess_data
+    self.processed_data = clean_and_process_data(
+  File "D:\Projects\Projects\Nocturna_AI\preprocess.py", line 82, in clean_and_process_data
+    processed_df['features'] = processed_df['clean_text'].apply(extract_dream_features_nltk)
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\pandas\core\series.py", line 4924, in apply
+    ).apply()
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\pandas\core\apply.py", line 1427, in apply
+    return self.apply_standard()
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\pandas\core\apply.py", line 1507, in apply_standard
+    mapped = obj._map_values(
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\pandas\core\base.py", line 921, in _map_values
+    return algorithms.map_array(arr, mapper, na_action=na_action, convert=convert)
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\pandas\core\algorithms.py", line 1743, in map_array
+    return lib.map_infer(values, mapper, convert=convert)
+  File "lib.pyx", line 2972, in pandas._libs.lib.map_infer
+  File "D:\Projects\Projects\Nocturna_AI\preprocess.py", line 42, in extract_dream_features_nltk
+    tokens = nltk.word_tokenize(text)
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\nltk\tokenize\__init__.py", line 142, in word_tokenize
+    sentences = [text] if preserve_line else sent_tokenize(text, language)
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\nltk\tokenize\__init__.py", line 119, in sent_tokenize
+    tokenizer = _get_punkt_tokenizer(language)
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\nltk\tokenize\__init__.py", line 105, in _get_punkt_tokenizer
+    return PunktTokenizer(language)
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\nltk\tokenize\punkt.py", line 1744, in __init__
+    self.load_lang(lang)
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\nltk\tokenize\punkt.py", line 1749, in load_lang
+    lang_dir = find(f"tokenizers/punkt_tab/{lang}/")
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\nltk\data.py", line 579, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource [93mpunkt_tab[0m not found.
+  Please use the NLTK Downloader to obtain the resource:
+
+  [31m>>> import nltk
+  >>> nltk.download('punkt_tab')
+  [0m
+  For more information see: https://www.nltk.org/data.html
+
+  Attempted to load [93mtokenizers/punkt_tab/english/[0m
+
+  Searched in:
+    - 'C:\\Users\\Utsav Sangani/nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\share\\nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\lib\\nltk_data'
+    - 'C:\\Users\\Utsav Sangani\\AppData\\Roaming\\nltk_data'
+    - 'C:\\nltk_data'
+    - 'D:\\nltk_data'
+    - 'E:\\nltk_data'
+**********************************************************************
+
+2025-04-10 19:20:12,213 - __main__ - INFO - Starting Dream Analysis System with config: {'data_path': 'dream_dataset.csv', 'text_column': 'Text', 'output_dir': 'dream_analysis_output', 'model_type': 'lstm', 'random_seed': 42, 'test_size': 0.2, 'save_models': True}
+2025-04-10 19:20:13,261 - dream_analysis_system - INFO - Loading data from dream_dataset.csv
+2025-04-10 19:20:13,270 - dream_analysis_system - INFO - Loaded 500 dream records
+2025-04-10 19:20:13,280 - dream_analysis_system - ERROR - Error during data loading and preprocessing: 
+**********************************************************************
+  Resource [93mpunkt_tab[0m not found.
+  Please use the NLTK Downloader to obtain the resource:
+
+  [31m>>> import nltk
+  >>> nltk.download('punkt_tab')
+  [0m
+  For more information see: https://www.nltk.org/data.html
+
+  Attempted to load [93mtokenizers/punkt_tab/english/[0m
+
+  Searched in:
+    - 'C:\\Users\\Utsav Sangani/nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\share\\nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\lib\\nltk_data'
+    - 'C:\\Users\\Utsav Sangani\\AppData\\Roaming\\nltk_data'
+    - 'C:\\nltk_data'
+    - 'D:\\nltk_data'
+    - 'E:\\nltk_data'
+**********************************************************************
+
+2025-04-10 19:20:13,281 - __main__ - ERROR - Error running Dream Analysis System: 
+**********************************************************************
+  Resource [93mpunkt_tab[0m not found.
+  Please use the NLTK Downloader to obtain the resource:
+
+  [31m>>> import nltk
+  >>> nltk.download('punkt_tab')
+  [0m
+  For more information see: https://www.nltk.org/data.html
+
+  Attempted to load [93mtokenizers/punkt_tab/english/[0m
+
+  Searched in:
+    - 'C:\\Users\\Utsav Sangani/nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\share\\nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\lib\\nltk_data'
+    - 'C:\\Users\\Utsav Sangani\\AppData\\Roaming\\nltk_data'
+    - 'C:\\nltk_data'
+    - 'D:\\nltk_data'
+    - 'E:\\nltk_data'
+**********************************************************************
+Traceback (most recent call last):
+  File "D:\Projects\Projects\Nocturna_AI\main.py", line 63, in main
+    system.load_and_preprocess_data()
+  File "D:\Projects\Projects\Nocturna_AI\dream_analysis_system.py", line 53, in load_and_preprocess_data
+    self.processed_data = clean_and_process_data(
+  File "D:\Projects\Projects\Nocturna_AI\preprocess.py", line 83, in clean_and_process_data
+    processed_df['features'] = processed_df['clean_text'].apply(extract_dream_features_nltk)
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\pandas\core\series.py", line 4924, in apply
+    ).apply()
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\pandas\core\apply.py", line 1427, in apply
+    return self.apply_standard()
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\pandas\core\apply.py", line 1507, in apply_standard
+    mapped = obj._map_values(
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\pandas\core\base.py", line 921, in _map_values
+    return algorithms.map_array(arr, mapper, na_action=na_action, convert=convert)
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\pandas\core\algorithms.py", line 1743, in map_array
+    return lib.map_infer(values, mapper, convert=convert)
+  File "lib.pyx", line 2972, in pandas._libs.lib.map_infer
+  File "D:\Projects\Projects\Nocturna_AI\preprocess.py", line 43, in extract_dream_features_nltk
+    tokens = nltk.word_tokenize(text)
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\nltk\tokenize\__init__.py", line 142, in word_tokenize
+    sentences = [text] if preserve_line else sent_tokenize(text, language)
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\nltk\tokenize\__init__.py", line 119, in sent_tokenize
+    tokenizer = _get_punkt_tokenizer(language)
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\nltk\tokenize\__init__.py", line 105, in _get_punkt_tokenizer
+    return PunktTokenizer(language)
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\nltk\tokenize\punkt.py", line 1744, in __init__
+    self.load_lang(lang)
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\nltk\tokenize\punkt.py", line 1749, in load_lang
+    lang_dir = find(f"tokenizers/punkt_tab/{lang}/")
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\nltk\data.py", line 579, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource [93mpunkt_tab[0m not found.
+  Please use the NLTK Downloader to obtain the resource:
+
+  [31m>>> import nltk
+  >>> nltk.download('punkt_tab')
+  [0m
+  For more information see: https://www.nltk.org/data.html
+
+  Attempted to load [93mtokenizers/punkt_tab/english/[0m
+
+  Searched in:
+    - 'C:\\Users\\Utsav Sangani/nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\share\\nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\lib\\nltk_data'
+    - 'C:\\Users\\Utsav Sangani\\AppData\\Roaming\\nltk_data'
+    - 'C:\\nltk_data'
+    - 'D:\\nltk_data'
+    - 'E:\\nltk_data'
+**********************************************************************
+
+2025-04-10 19:20:46,404 - __main__ - INFO - Starting Dream Analysis System with config: {'data_path': 'dream_dataset.csv', 'text_column': 'Text', 'output_dir': 'dream_analysis_output', 'model_type': 'lstm', 'random_seed': 42, 'test_size': 0.2, 'save_models': True}
+2025-04-10 19:20:48,277 - dream_analysis_system - INFO - Loading data from dream_dataset.csv
+2025-04-10 19:20:48,285 - dream_analysis_system - INFO - Loaded 500 dream records
+2025-04-10 19:20:48,346 - dream_analysis_system - ERROR - Error during data loading and preprocessing: 
+**********************************************************************
+  Resource [93maveraged_perceptron_tagger_eng[0m not found.
+  Please use the NLTK Downloader to obtain the resource:
+
+  [31m>>> import nltk
+  >>> nltk.download('averaged_perceptron_tagger_eng')
+  [0m
+  For more information see: https://www.nltk.org/data.html
+
+  Attempted to load [93mtaggers/averaged_perceptron_tagger_eng/[0m
+
+  Searched in:
+    - 'C:\\Users\\Utsav Sangani/nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\share\\nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\lib\\nltk_data'
+    - 'C:\\Users\\Utsav Sangani\\AppData\\Roaming\\nltk_data'
+    - 'C:\\nltk_data'
+    - 'D:\\nltk_data'
+    - 'E:\\nltk_data'
+**********************************************************************
+
+2025-04-10 19:20:48,346 - __main__ - ERROR - Error running Dream Analysis System: 
+**********************************************************************
+  Resource [93maveraged_perceptron_tagger_eng[0m not found.
+  Please use the NLTK Downloader to obtain the resource:
+
+  [31m>>> import nltk
+  >>> nltk.download('averaged_perceptron_tagger_eng')
+  [0m
+  For more information see: https://www.nltk.org/data.html
+
+  Attempted to load [93mtaggers/averaged_perceptron_tagger_eng/[0m
+
+  Searched in:
+    - 'C:\\Users\\Utsav Sangani/nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\share\\nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\lib\\nltk_data'
+    - 'C:\\Users\\Utsav Sangani\\AppData\\Roaming\\nltk_data'
+    - 'C:\\nltk_data'
+    - 'D:\\nltk_data'
+    - 'E:\\nltk_data'
+**********************************************************************
+Traceback (most recent call last):
+  File "D:\Projects\Projects\Nocturna_AI\main.py", line 63, in main
+    system.load_and_preprocess_data()
+  File "D:\Projects\Projects\Nocturna_AI\dream_analysis_system.py", line 53, in load_and_preprocess_data
+    self.processed_data = clean_and_process_data(
+  File "D:\Projects\Projects\Nocturna_AI\preprocess.py", line 83, in clean_and_process_data
+    processed_df['features'] = processed_df['clean_text'].apply(extract_dream_features_nltk)
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\pandas\core\series.py", line 4924, in apply
+    ).apply()
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\pandas\core\apply.py", line 1427, in apply
+    return self.apply_standard()
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\pandas\core\apply.py", line 1507, in apply_standard
+    mapped = obj._map_values(
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\pandas\core\base.py", line 921, in _map_values
+    return algorithms.map_array(arr, mapper, na_action=na_action, convert=convert)
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\pandas\core\algorithms.py", line 1743, in map_array
+    return lib.map_infer(values, mapper, convert=convert)
+  File "lib.pyx", line 2972, in pandas._libs.lib.map_infer
+  File "D:\Projects\Projects\Nocturna_AI\preprocess.py", line 44, in extract_dream_features_nltk
+    tagged = nltk.pos_tag(tokens)
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\nltk\tag\__init__.py", line 168, in pos_tag
+    tagger = _get_tagger(lang)
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\nltk\tag\__init__.py", line 110, in _get_tagger
+    tagger = PerceptronTagger()
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\nltk\tag\perceptron.py", line 183, in __init__
+    self.load_from_json(lang)
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\nltk\tag\perceptron.py", line 273, in load_from_json
+    loc = find(f"taggers/averaged_perceptron_tagger_{lang}/")
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\nltk\data.py", line 579, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource [93maveraged_perceptron_tagger_eng[0m not found.
+  Please use the NLTK Downloader to obtain the resource:
+
+  [31m>>> import nltk
+  >>> nltk.download('averaged_perceptron_tagger_eng')
+  [0m
+  For more information see: https://www.nltk.org/data.html
+
+  Attempted to load [93mtaggers/averaged_perceptron_tagger_eng/[0m
+
+  Searched in:
+    - 'C:\\Users\\Utsav Sangani/nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\share\\nltk_data'
+    - 'D:\\Projects\\Projects\\Nocturna_AI\\.venv\\lib\\nltk_data'
+    - 'C:\\Users\\Utsav Sangani\\AppData\\Roaming\\nltk_data'
+    - 'C:\\nltk_data'
+    - 'D:\\nltk_data'
+    - 'E:\\nltk_data'
+**********************************************************************
+
+2025-04-10 19:21:02,136 - __main__ - INFO - Starting Dream Analysis System with config: {'data_path': 'dream_dataset.csv', 'text_column': 'Text', 'output_dir': 'dream_analysis_output', 'model_type': 'lstm', 'random_seed': 42, 'test_size': 0.2, 'save_models': True}
+2025-04-10 19:21:03,723 - dream_analysis_system - INFO - Loading data from dream_dataset.csv
+2025-04-10 19:21:03,731 - dream_analysis_system - INFO - Loaded 500 dream records
+2025-04-10 19:21:06,157 - dream_analysis_system - INFO - Preprocessing complete
+2025-04-10 19:21:06,157 - dream_analysis_system - INFO - Preparing features and splitting data
+2025-04-10 19:21:06,306 - dream_analysis_system - INFO - Feature preparation complete
+2025-04-10 19:21:08,628 - dream_analysis_system - INFO - Building and training lstm model
+2025-04-10 19:21:43,754 - dream_analysis_system - INFO - Saved lstm model to dream_analysis_output\models\lstm_model.pth
+2025-04-10 19:21:43,755 - dream_analysis_system - INFO - Saved vocab to dream_analysis_output\models\vocab.pkl
+2025-04-10 19:21:43,755 - dream_analysis_system - INFO - All models saved successfully
+2025-04-10 19:21:43,755 - dream_analysis_system - INFO - Model training complete
+2025-04-10 19:21:44,598 - dream_analysis_system - INFO - Evaluating model performance
+2025-04-10 19:21:45,583 - dream_analysis_system - INFO - Evaluation complete
+2025-04-10 19:21:45,679 - dream_analysis_system - INFO - Analyzing dream patterns
+2025-04-10 19:21:46,009 - utils - INFO - Wordcloud saved to dream_analysis_output\anxiety_indicator_positive_wordcloud.png
+2025-04-10 19:21:46,319 - utils - INFO - Wordcloud saved to dream_analysis_output\anxiety_indicator_negative_wordcloud.png
+2025-04-10 19:21:46,321 - dream_analysis_system - INFO - Pattern analysis complete
+2025-04-10 19:21:46,321 - __main__ - INFO - Dream analysis complete. Results available in dream_analysis_output
+2025-04-10 20:49:15,711 - __main__ - INFO - Starting Dream Analysis System with config: {'data_path': 'dream_dataset.csv', 'text_column': 'Text', 'output_dir': 'dream_analysis_output', 'model_type': 'lstm', 'random_seed': 42, 'test_size': 0.2, 'save_models': True}
+2025-04-10 20:49:17,542 - dream_analysis_system - INFO - Loading data from dream_dataset.csv
+2025-04-10 20:49:17,552 - dream_analysis_system - INFO - Loaded 500 dream records
+2025-04-10 20:49:20,451 - dream_analysis_system - INFO - Preprocessing complete
+2025-04-10 20:49:20,451 - dream_analysis_system - INFO - Preparing features and splitting data
+2025-04-10 20:49:20,622 - dream_analysis_system - INFO - Feature preparation complete
+2025-04-10 20:49:22,333 - dream_analysis_system - INFO - Building and training lstm model
+2025-04-10 20:50:38,738 - dream_analysis_system - INFO - Saved lstm model to dream_analysis_output\models\lstm_model.pth
+2025-04-10 20:50:38,741 - dream_analysis_system - INFO - Saved vocab to dream_analysis_output\models\vocab.pkl
+2025-04-10 20:50:38,741 - dream_analysis_system - INFO - All models saved successfully
+2025-04-10 20:50:38,741 - dream_analysis_system - INFO - Model training complete
+2025-04-10 20:50:39,009 - dream_analysis_system - INFO - Evaluating model performance
+2025-04-10 20:50:39,793 - dream_analysis_system - INFO - Evaluation complete
+2025-04-10 20:50:39,806 - dream_analysis_system - INFO - Analyzing dream patterns
+2025-04-10 20:50:40,154 - utils - INFO - Wordcloud saved to dream_analysis_output\anxiety_indicator_positive_wordcloud.png
+2025-04-10 20:50:40,523 - utils - INFO - Wordcloud saved to dream_analysis_output\anxiety_indicator_negative_wordcloud.png
+2025-04-10 20:50:40,525 - dream_analysis_system - INFO - Pattern analysis complete
+2025-04-10 20:50:40,526 - __main__ - INFO - Dream analysis complete. Results available in dream_analysis_output
+2025-04-11 13:18:50,888 - logging_config - INFO - Starting Dream Analysis System with config: {'data': 'path/to/dataset.csv', 'text_column': 'Text', 'output': 'results_dir', 'model': 'transformer', 'random_seed': 42, 'test_size': 0.2, 'save_models': True}
+2025-04-11 13:20:03,442 - logging_config - INFO - Starting Dream Analysis System with config: {'data': 'path/to/dataset.csv', 'text_column': 'Text', 'output': 'results_dir', 'model': 'transformer', 'random_seed': 42, 'test_size': 0.2, 'save_models': True}
+2025-04-11 13:21:11,392 - logging_config - INFO - Starting Dream Analysis System with config: {'data': 'D:\\Projects\\Projects\\Nocturna_AI\\dream_dataset.csv', 'text_column': 'Text', 'output': 'results_dir', 'model': 'transformer', 'random_seed': 42, 'test_size': 0.2, 'save_models': True}
+2025-04-11 13:22:06,277 - __main__ - INFO - Starting Dream Analysis System with config: {'data_path': 'D:\\Projects\\Projects\\Nocturna_AI\\dream_dataset.csv', 'text_column': 'Text', 'output_dir': 'results_dir', 'model_type': 'transformer', 'random_seed': 42, 'test_size': 0.2, 'save_models': True}
+2025-04-11 13:22:13,450 - dream_analysis_system - INFO - Loading data from D:\Projects\Projects\Nocturna_AI\dream_dataset.csv
+2025-04-11 13:22:13,461 - dream_analysis_system - INFO - Loaded 500 dream records
+2025-04-11 13:22:16,055 - dream_analysis_system - INFO - Preprocessing complete
+2025-04-11 13:22:16,056 - dream_analysis_system - INFO - Preparing features and splitting data
+2025-04-11 13:22:33,350 - dream_analysis_system - INFO - Feature preparation complete
+2025-04-11 13:22:34,807 - dream_analysis_system - INFO - Building and training transformer model
+2025-04-11 13:22:35,748 - huggingface_hub.file_download - WARNING - Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+2025-04-11 13:22:59,340 - dream_analysis_system - ERROR - Error during model building and training: 
+2025-04-11 13:22:59,341 - __main__ - ERROR - Error running Dream Analysis System: 
+Traceback (most recent call last):
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\transformers\tokenization_utils_base.py", line 284, in __getattr__
+    return self.data[item]
+KeyError: 'size'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Projects\Nocturna_AI\main.py", line 65, in main
+    system.build_and_train_models()
+  File "D:\Projects\Projects\Nocturna_AI\dream_analysis_system.py", line 115, in build_and_train_models
+    result = build_and_train_model(
+  File "D:\Projects\Projects\Nocturna_AI\model.py", line 130, in build_and_train_model
+    model, history = train_pytorch_model(model, X_train, y_train, epochs=3, batch_size=16, device=device)
+  File "D:\Projects\Projects\Nocturna_AI\model.py", line 62, in train_pytorch_model
+    dataset = torch.utils.data.TensorDataset(X_train, y_train)
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\torch\utils\data\dataset.py", line 202, in __init__
+    assert all(tensors[0].size(0) == tensor.size(0) for tensor in tensors), "Size mismatch between tensors"
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\torch\utils\data\dataset.py", line 202, in <genexpr>
+    assert all(tensors[0].size(0) == tensor.size(0) for tensor in tensors), "Size mismatch between tensors"
+  File "D:\Projects\Projects\Nocturna_AI\.venv\lib\site-packages\transformers\tokenization_utils_base.py", line 286, in __getattr__
+    raise AttributeError
+AttributeError
+2025-04-11 13:23:39,589 - __main__ - INFO - Starting Dream Analysis System with config: {'data_path': 'D:\\Projects\\Projects\\Nocturna_AI\\dream_dataset.csv', 'text_column': 'Text', 'output_dir': 'results_dir', 'model_type': 'lstm', 'random_seed': 42, 'test_size': 0.2, 'save_models': True}
+2025-04-11 13:23:40,660 - dream_analysis_system - INFO - Loading data from D:\Projects\Projects\Nocturna_AI\dream_dataset.csv
+2025-04-11 13:23:40,669 - dream_analysis_system - INFO - Loaded 500 dream records
+2025-04-11 13:23:43,202 - dream_analysis_system - INFO - Preprocessing complete
+2025-04-11 13:23:43,203 - dream_analysis_system - INFO - Preparing features and splitting data
+2025-04-11 13:23:43,371 - dream_analysis_system - INFO - Feature preparation complete
+2025-04-11 13:23:44,864 - dream_analysis_system - INFO - Building and training lstm model
+2025-04-11 13:24:47,437 - dream_analysis_system - INFO - Saved lstm model to results_dir\models\lstm_model.pth
+2025-04-11 13:24:47,439 - dream_analysis_system - INFO - Saved vocab to results_dir\models\vocab.pkl
+2025-04-11 13:24:47,439 - dream_analysis_system - INFO - All models saved successfully
+2025-04-11 13:24:47,439 - dream_analysis_system - INFO - Model training complete
+2025-04-11 13:24:48,191 - dream_analysis_system - INFO - Evaluating model performance
+2025-04-11 13:24:49,383 - dream_analysis_system - INFO - Evaluation complete
+2025-04-11 13:24:49,440 - dream_analysis_system - INFO - Analyzing dream patterns
+2025-04-11 13:24:49,818 - utils - INFO - Wordcloud saved to results_dir\anxiety_indicator_positive_wordcloud.png
+2025-04-11 13:24:50,189 - utils - INFO - Wordcloud saved to results_dir\anxiety_indicator_negative_wordcloud.png
+2025-04-11 13:24:50,194 - dream_analysis_system - INFO - Pattern analysis complete
+2025-04-11 13:24:50,194 - __main__ - INFO - Dream analysis complete. Results available in results_dir
+2025-04-11 13:25:26,177 - __main__ - INFO - Starting Dream Analysis System with config: {'data_path': 'D:\\Projects\\Projects\\Nocturna_AI\\dream_dataset.csv', 'text_column': 'Text', 'output_dir': 'results_dir', 'model_type': 'ml', 'random_seed': 42, 'test_size': 0.2, 'save_models': True}
+2025-04-11 13:25:27,453 - dream_analysis_system - INFO - Loading data from D:\Projects\Projects\Nocturna_AI\dream_dataset.csv
+2025-04-11 13:25:27,464 - dream_analysis_system - INFO - Loaded 500 dream records
+2025-04-11 13:25:30,012 - dream_analysis_system - INFO - Preprocessing complete
+2025-04-11 13:25:30,013 - dream_analysis_system - INFO - Preparing features and splitting data
+2025-04-11 13:25:30,054 - dream_analysis_system - INFO - Feature preparation complete
+2025-04-11 13:25:31,533 - dream_analysis_system - INFO - Building and training ml model
+2025-04-11 13:25:34,956 - dream_analysis_system - INFO - Saved random_forest model to results_dir\models\random_forest_model.joblib
+2025-04-11 13:25:34,966 - dream_analysis_system - INFO - Saved neural_network model to results_dir\models\neural_network_model.joblib
+2025-04-11 13:25:35,017 - dream_analysis_system - INFO - Saved feature extractor to results_dir\models\feature_extractor.joblib
+2025-04-11 13:25:35,017 - dream_analysis_system - INFO - All models saved successfully
+2025-04-11 13:25:35,018 - dream_analysis_system - INFO - Model training complete
+2025-04-11 13:25:35,299 - dream_analysis_system - INFO - Evaluating model performance
+2025-04-11 13:25:35,973 - dream_analysis_system - INFO - Evaluation complete
+2025-04-11 13:25:35,986 - dream_analysis_system - INFO - Analyzing dream patterns
+2025-04-11 13:25:36,305 - utils - INFO - Wordcloud saved to results_dir\anxiety_indicator_positive_wordcloud.png
+2025-04-11 13:25:36,638 - utils - INFO - Wordcloud saved to results_dir\anxiety_indicator_negative_wordcloud.png
+2025-04-11 13:25:36,640 - dream_analysis_system - INFO - Pattern analysis complete
+2025-04-11 13:25:36,640 - __main__ - INFO - Dream analysis complete. Results available in results_dir
+2025-04-11 20:54:25,920 - __main__ - INFO - Starting Dream Analysis System with config: {'data_path': 'D:\\Projects\\Projects\\Nocturna_AI\\dream_dataset.csv', 'text_column': 'Text', 'output_dir': 'results_dir', 'model_type': 'ml', 'random_seed': 42, 'test_size': 0.2, 'save_models': True}
+2025-04-11 20:54:34,252 - dream_analysis_system - INFO - Loading data from D:\Projects\Projects\Nocturna_AI\dream_dataset.csv
+2025-04-11 20:54:34,278 - dream_analysis_system - INFO - Loaded 500 dream records
+2025-04-11 20:54:37,140 - dream_analysis_system - INFO - Preprocessing complete
+2025-04-11 20:54:37,140 - dream_analysis_system - INFO - Preparing features and splitting data
+2025-04-11 20:54:37,180 - dream_analysis_system - INFO - Feature preparation complete
+2025-04-11 20:54:57,888 - dream_analysis_system - INFO - Building and training ml model
+2025-04-11 20:55:01,695 - dream_analysis_system - INFO - Saved random_forest model to results_dir\models\random_forest_model.joblib
+2025-04-11 20:55:01,709 - dream_analysis_system - INFO - Saved neural_network model to results_dir\models\neural_network_model.joblib
+2025-04-11 20:55:01,760 - dream_analysis_system - INFO - Saved feature extractor to results_dir\models\feature_extractor.joblib
+2025-04-11 20:55:01,761 - dream_analysis_system - INFO - All models saved successfully
+2025-04-11 20:55:01,761 - dream_analysis_system - INFO - Model training complete
+2025-04-11 20:55:02,718 - dream_analysis_system - INFO - Evaluating model performance
+2025-04-11 20:55:04,152 - dream_analysis_system - INFO - Evaluation complete
+2025-04-11 20:55:04,243 - dream_analysis_system - INFO - Analyzing dream patterns
+2025-04-11 20:55:04,630 - utils - INFO - Wordcloud saved to results_dir\anxiety_indicator_positive_wordcloud.png
+2025-04-11 20:55:04,985 - utils - INFO - Wordcloud saved to results_dir\anxiety_indicator_negative_wordcloud.png
+2025-04-11 20:55:04,987 - dream_analysis_system - INFO - Pattern analysis complete
+2025-04-11 20:55:04,987 - __main__ - INFO - Dream analysis complete. Results available in results_dir
+2025-04-21 10:15:08,769 - __main__ - INFO - Starting Dream Analysis System with config: {'data_path': 'D:\\Projects\\Projects\\Nocturna_AI\\dream_dataset.csv', 'text_column': 'Text', 'output_dir': 'results_dir', 'model_type': 'lstm', 'random_seed': 42, 'test_size': 0.2, 'save_models': True}
+2025-04-21 10:15:15,604 - dream_analysis_system - INFO - Loading data from D:\Projects\Projects\Nocturna_AI\dream_dataset.csv
+2025-04-21 10:15:15,614 - dream_analysis_system - INFO - Loaded 500 dream records
+2025-04-21 10:15:18,368 - dream_analysis_system - INFO - Preprocessing complete
+2025-04-21 10:15:18,368 - dream_analysis_system - INFO - Preparing features and splitting data
+2025-04-21 10:15:18,556 - dream_analysis_system - INFO - Feature preparation complete
+2025-04-21 10:15:29,186 - dream_analysis_system - INFO - Building and training lstm model
+2025-04-21 10:16:32,923 - dream_analysis_system - INFO - Saved lstm model to results_dir\models\lstm_model.pth
+2025-04-21 10:16:32,925 - dream_analysis_system - INFO - Saved vocab to results_dir\models\vocab.pkl
+2025-04-21 10:16:32,926 - dream_analysis_system - INFO - All models saved successfully
+2025-04-21 10:16:32,926 - dream_analysis_system - INFO - Model training complete
+2025-04-21 10:16:33,895 - dream_analysis_system - INFO - Evaluating model performance
+2025-04-21 10:16:35,412 - dream_analysis_system - INFO - Evaluation complete
+2025-04-21 10:16:35,514 - dream_analysis_system - INFO - Analyzing dream patterns
+2025-04-21 10:16:35,915 - utils - INFO - Wordcloud saved to results_dir\anxiety_indicator_positive_wordcloud.png
+2025-04-21 10:16:36,303 - utils - INFO - Wordcloud saved to results_dir\anxiety_indicator_negative_wordcloud.png
+2025-04-21 10:16:36,310 - dream_analysis_system - INFO - Pattern analysis complete
+2025-04-21 10:16:36,310 - __main__ - INFO - Dream analysis complete. Results available in results_dir

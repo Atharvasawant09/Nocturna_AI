@@ -1,0 +1,9 @@
+{
+    "data_path": "D:\\Projects\\Projects\\Nocturna_AI\\dream_dataset.csv",
+    "text_column": "Text",
+    "output_dir": "results_dir",
+    "model_type": "lstm",
+    "random_seed": 42,
+    "test_size": 0.2,
+    "save_models": true
+}
