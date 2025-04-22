@@ -7,7 +7,7 @@ import logging
 import torch
 
 class DreamAnalysisSystem:
-    """Complete system for analyzing dreams and predicting mental health indicators"""
+    """Complete system for analyzing dreams"""
     
     def __init__(self, config=None):
         """Initialize with configuration parameters"""

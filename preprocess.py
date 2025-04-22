@@ -16,6 +16,8 @@ try:
 except LookupError:
     nltk.download('punkt')
 
+    
+
 # Download other necessary NLTK data
 nltk.download('punkt_tab', quiet=True)
 nltk.download('vader_lexicon', quiet=True)

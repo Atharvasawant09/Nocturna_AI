@@ -554,3 +554,52 @@ AttributeError
 2025-04-21 10:16:36,303 - utils - INFO - Wordcloud saved to results_dir\anxiety_indicator_negative_wordcloud.png
 2025-04-21 10:16:36,310 - dream_analysis_system - INFO - Pattern analysis complete
 2025-04-21 10:16:36,310 - __main__ - INFO - Dream analysis complete. Results available in results_dir
+2025-04-21 10:30:15,280 - __main__ - INFO - Starting Dream Analysis System with config: {'data_path': 'D:\\Projects\\Projects\\Nocturna_AI\\dream_dataset.csv', 'text_column': 'Text', 'output_dir': 'results_dir', 'model_type': 'lstm', 'random_seed': 42, 'test_size': 0.2, 'save_models': True}
+2025-04-21 10:30:16,360 - dream_analysis_system - INFO - Loading data from D:\Projects\Projects\Nocturna_AI\dream_dataset.csv
+2025-04-21 10:30:16,369 - dream_analysis_system - INFO - Loaded 500 dream records
+2025-04-21 10:30:19,249 - dream_analysis_system - INFO - Preprocessing complete
+2025-04-21 10:30:19,249 - dream_analysis_system - INFO - Preparing features and splitting data
+2025-04-21 10:30:19,419 - dream_analysis_system - INFO - Feature preparation complete
+2025-04-21 10:30:21,721 - dream_analysis_system - INFO - Building and training lstm model
+2025-04-21 10:32:02,289 - dream_analysis_system - INFO - Saved lstm model to results_dir\models\lstm_model.pth
+2025-04-21 10:32:02,291 - dream_analysis_system - INFO - Saved vocab to results_dir\models\vocab.pkl
+2025-04-21 10:32:02,292 - dream_analysis_system - INFO - All models saved successfully
+2025-04-21 10:32:02,292 - dream_analysis_system - INFO - Model training complete
+2025-04-21 10:32:02,672 - dream_analysis_system - INFO - Evaluating model performance
+2025-04-21 10:32:03,718 - dream_analysis_system - INFO - Evaluation complete
+2025-04-21 10:32:03,732 - dream_analysis_system - INFO - Analyzing dream patterns
+2025-04-21 10:32:04,128 - utils - INFO - Wordcloud saved to results_dir\anxiety_indicator_positive_wordcloud.png
+2025-04-21 10:32:04,529 - utils - INFO - Wordcloud saved to results_dir\anxiety_indicator_negative_wordcloud.png
+2025-04-21 10:32:04,532 - dream_analysis_system - INFO - Pattern analysis complete
+2025-04-21 10:32:04,532 - __main__ - INFO - Dream analysis complete. Results available in results_dir
+2025-04-21 11:13:29,923 - __main__ - INFO - Starting Dream Analysis System with config: {'data_path': 'D:\\Projects\\Projects\\Nocturna_AI\\dream_dataset.csv', 'text_column': 'Text', 'output_dir': 'results_dir', 'model_type': 'lstm', 'random_seed': 42, 'test_size': 0.2, 'save_models': True}
+2025-04-21 11:13:37,961 - dream_analysis_system - INFO - Loading data from D:\Projects\Projects\Nocturna_AI\dream_dataset.csv
+2025-04-21 11:13:37,981 - dream_analysis_system - INFO - Loaded 500 dream records
+2025-04-21 11:13:40,488 - dream_analysis_system - INFO - Preprocessing complete
+2025-04-21 11:13:40,489 - dream_analysis_system - INFO - Preparing features and splitting data
+2025-04-21 11:13:40,489 - dream_analysis_system - ERROR - Error during feature preparation: prepare_features() got an unexpected keyword argument 'model_type'
+2025-04-21 11:13:40,489 - __main__ - ERROR - Error running Dream Analysis System: prepare_features() got an unexpected keyword argument 'model_type'
+Traceback (most recent call last):
+  File "D:\Projects\Projects\Nocturna_AI\main.py", line 64, in main
+    system.prepare_features_and_split()
+  File "D:\Projects\Projects\Nocturna_AI\dream_analysis_system.py", line 79, in prepare_features_and_split
+    result = prepare_features(
+TypeError: prepare_features() got an unexpected keyword argument 'model_type'
+2025-04-21 14:02:01,776 - __main__ - INFO - Starting Dream Analysis System with config: {'data_path': 'D:\\Projects\\Projects\\Nocturna_AI\\dream_dataset.csv', 'text_column': 'Text', 'output_dir': 'results_dir', 'model_type': 'lstm', 'random_seed': 42, 'test_size': 0.2, 'save_models': True}
+2025-04-21 14:02:02,955 - dream_analysis_system - INFO - Loading data from D:\Projects\Projects\Nocturna_AI\dream_dataset.csv
+2025-04-21 14:02:02,968 - dream_analysis_system - INFO - Loaded 500 dream records
+2025-04-21 14:02:05,526 - dream_analysis_system - INFO - Preprocessing complete
+2025-04-21 14:02:05,527 - dream_analysis_system - INFO - Preparing features and splitting data
+2025-04-21 14:02:05,693 - dream_analysis_system - INFO - Feature preparation complete
+2025-04-21 14:02:28,709 - dream_analysis_system - INFO - Building and training lstm model
+2025-04-21 14:03:47,462 - dream_analysis_system - INFO - Saved lstm model to results_dir\models\lstm_model.pth
+2025-04-21 14:03:47,463 - dream_analysis_system - INFO - Saved vocab to results_dir\models\vocab.pkl
+2025-04-21 14:03:47,463 - dream_analysis_system - INFO - All models saved successfully
+2025-04-21 14:03:47,463 - dream_analysis_system - INFO - Model training complete
+2025-04-21 14:03:48,419 - dream_analysis_system - INFO - Evaluating model performance
+2025-04-21 14:03:50,191 - dream_analysis_system - INFO - Evaluation complete
+2025-04-21 14:03:50,324 - dream_analysis_system - INFO - Analyzing dream patterns
+2025-04-21 14:03:50,678 - utils - INFO - Wordcloud saved to results_dir\anxiety_indicator_positive_wordcloud.png
+2025-04-21 14:03:50,989 - utils - INFO - Wordcloud saved to results_dir\anxiety_indicator_negative_wordcloud.png
+2025-04-21 14:03:50,992 - dream_analysis_system - INFO - Pattern analysis complete
+2025-04-21 14:03:50,992 - __main__ - INFO - Dream analysis complete. Results available in results_dir
